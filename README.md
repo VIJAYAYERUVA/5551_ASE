@@ -19,4 +19,5 @@ Teaching Assistants: Arunit, Marmik, Ram Gopal and Sidrah
 
 Lab Assignment1: https://github.com/VIJAYAYERUVA/5551_ASE/wiki/LAB1
 
-Lab Assignment2:
+Lab Assignment2: https://github.com/VIJAYAYERUVA/5551_ASE/wiki/LAB2
+
