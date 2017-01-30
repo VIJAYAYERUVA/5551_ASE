@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASE LAB2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+<div id="content">
+    <h1>REGISTRATION SCREEN</h1>
+    <p>Enter the personal details to signup
+    <p>
+
+    <form>
+        <div class="form-group"><label for="username">User Name:</label>
+            <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="form-group"><label for="name">Full Name:</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID:</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" required>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Confirm Password:</label>
+            <input type="password" class="form-control" id="pwd" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">DOB:</label>
+            <input type="date" class="form-control" id="date" required>
+        </div>
+        <button type="button" class="btn btn-default" onclick="location.href='home.html'">Sign up</button>
+        <button type="reset" class="btn btn-default">Reset</button>
+        <button type="button" class="btn btn-default" onclick="location.href='index.html'">Go Back</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASE LAB2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+<script>
+    function login() {
+        document.getElementById("login").style.visibility = "visible";
+    }
+</script>
+</head>
+
+<body>
+<div id="content">
+    <h1>LOG IN SCREEN</h1>
+    <p>Enter username and password to log in</p>
+    <form id="login">
+        <div class="form-group"><label for="username">User Name:</label>
+            <input type="text" class="form-control" id="username" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" required><br><br><br>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label><br><br><br>
+        </div>
+        <button type="button" class="btn btn-default" onclick="location.href='home.html'">Log In</button>
+        <button type="button" class="btn btn-default" onclick="location.href='index.html'">Go Back</button>
+        <br><br>
+        <a href="register.html">Not yet registred? Click here to register</a>
+    </form>
+</div>
+</body>
+</html>
