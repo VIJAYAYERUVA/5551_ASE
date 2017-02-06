@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="home.css">
+
+</head>
+<body class="body">
+<br><br><br>
+<div ng-controller="View1Ctrl" style="top: 200px">
+    <div class="menu" id="div_SearchContainer">
+        <h1 align="absolute" style="text-align: center; color: F8F8FF">HERE U GO !</h1><br>
+        <P style="text-align: center; color: F8F8FF">
+        <input type="text" id="txt_placeName" placeholder="@ PLACE" style="text-align: center; color: F8F8FF"/>
+        </P>
+        <P style="text-align: center; color: F8F8FF">
+        <input type="text" id="txt_searchFilter" placeholder="Searching for" style="text-align: center; color: F8F8FF"/>
+        </P>
+        <P style="text-align: center; color: F8F8FF">
+        <button id="btn_getReview" ng-click="getVenues()">Get Venues</button>
+        </P>
+        <P style="text-align: center; color: F8F8FF">
+        <button onclick="location.href = 'index.html';">Signout</button>
+        </P>
+    </div>
+    <div id="div_VenueList">
+        <h2 style="text-align: center; color: blue"> Top Five Results </h2>
+        <ul>
+            <li ng-repeat="venue in venueList"
+                style="font-size: x-large; color: navy; text-align: center; list-style: none"
+                list-style-position:inside;
+            ">
+            <a href="" ng-click="getReviews(venue)" style="font-size: x-large; color: #5e5e5e; text-align: center;">{{venue.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div id="div_ReviewList" style="display:none;">
+        <p ng-model="ReviewWithSentiment">
+        <TABLE BORDER=2 CELLPADDING=4>
+            <TR>
+                <TH style="color: aliceblue; background:#1ab188" COLSPAN=2>Sentiment Analysis From Using Alchemy API
+                </TH>
+            </TR>
+            <TR>
+                <TD>Most recent review</TD>
+                <TD>{{ReviewWithSentiment.reviewText}}</TD>
+            </TR>
+            <TR>
+                <TD>Sentiment of the review</TD>
+                <TD>{{ReviewWithSentiment.sentiment}}</TD>
+            </TR>
+            <TR>
+                <TD>Sentiment Score of the review</TD>
+                <TD>{{ReviewWithSentiment.score}}</TD>
+            </TR>
+            <TR>
+                <TH style="color: aliceblue; background:#1ab188" COLSPAN=2 BGCOLOR="#445553">
+                    {{ReviewWithSentiment.reviewText}}
+                </TH>
+            </TR>
+        </TABLE>
+        </p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

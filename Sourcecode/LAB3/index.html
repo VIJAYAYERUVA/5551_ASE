@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LAB3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="116369568855-igv80pnh3g1slkujciid5i65gr4a001r.apps.googleusercontent.com">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script>
+        // This is called with the results from from FB.getLoginStatus().
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+        function renderButton() {
+            gapi.signin2.render('my-signin2', {
+                'scope': 'profile email',
+                'width': 440,
+                'height': 200,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+            });
+        }
+
+        function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            if (response.status === 'connected') {
+                testAPI();
+            } else if (response.status === 'not_authorized') {
+                document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+            } else {
+                document.getElementById('status').innerHTML = 'Please log ' +
+                    'into Facebook.';
+            }
+        }
+        function checkLoginState() {
+            window.location="home.html";
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1218498914924747',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v2.8'
+            });
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        };
+        // Load the SDK asynchronously
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function testAPI() {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+                console.log('Successful login for: ' + response.name);
+                document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+            });
+        }
+    </script>
+</head>
+<body>
+<br>
+<br><br><br><br><br><br>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pr-wrap">
+                <div class="pass-reset">
+                </div>
+            </div>
+            <div class="wrap">
+                <p class="form-title"> ASE LAB Assignment-3</p>
+                <form class="login" name="lform">
+                    <input type="text" id="username" placeholder="Username" />
+                    <input type="password" id="pwd" placeholder="Password" />
+                    <input type="button" value="Log In" onclick="Validate_Login()" class="btn btn-success btn-sm" />
+                    <script>
+                        function Validate_Login() {
+                            var password=document.getElementById('pwd').value;
+                            var userid=document.getElementById('username').value;
+                            if((userid=="ASELAB3") && (password=="ASELAB3")) {
+                                window.location = "home.html";
+                            }
+                            else {
+                                alert("Incorrect login details,Login Failed");
+                            }    }
+                    </script>
+                    <div class="remember-forgot">
+                        <div class="row">
+                            <p class="form-title1">Not yet registered?</p>
+                        </div>
+                    </div>
+
+                    <div id="my-signin2"></div>
+                    <script>
+                        function onSuccess(googleUser) {
+                            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                        }
+                        function onFailure(error) {
+                            console.log(error);
+                        }
+                        function renderButton() {
+                            gapi.signin2.render('my-signin2', {
+                                'scope': 'profile email',
+                                'width': 305,
+                                'height': 40,
+                                'longtitle': true,
+                                'theme': 'dark',
+                                'onsuccess': onSuccess,
+                                'onfailure': onFailure
+                            });
+                        }
+                    </script>
+                    <br>
+                    <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
+                        Sign in with Facebook
+                    </fb:login-button>
+                    <br>
+                    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
