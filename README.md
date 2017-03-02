@@ -25,4 +25,6 @@ Lab Assignment3: https://github.com/VIJAYAYERUVA/5551_ASE/wiki/LAB3
 
 Lab Assignment4: https://github.com/VIJAYAYERUVA/5551_ASE/wiki/LAB4
 
-Lab Assignment4: https://github.com/VIJAYAYERUVA/5551_ASE/wiki/LAB5
+Lab Assignment5: https://github.com/VIJAYAYERUVA/5551_ASE/wiki/LAB5
+
+Lab Assignment6: https://github.com/VIJAYAYERUVA/5551_ASE/wiki/LAB6
