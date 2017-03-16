@@ -1,0 +1,30 @@
+body {
+    background-color: lightblue;
+    font-family: "Georgia";
+    text-align:center;
+}
+button{
+    background-color: Blue;
+    color: white;
+    float: left;
+    font-size: large;
+    font-family: "Georgia";
+    text-align:center;
+}
+
+form{
+    padding-left: 20%;
+    padding-top: 10%;
+    color: #761c19;
+    font-size: medium;
+    font-family: "Georgia";
+    text-align:left;
+}
+#content {
+    max-width: 1000px;
+    margin: auto;
+    left: 1%;
+    right: 1%;
+    position: absolute;
+    text-align:center;
+}
